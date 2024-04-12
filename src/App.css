@@ -16,7 +16,12 @@
     url("./fonts/ChulabhornLikitText-Medium.ttf") format("truetype");
 }
 
+body {
+  background-color: #fd7c9b;
+}
+
 .App {
+  background-color: white;
   text-align: center;
   padding: 0 0 20px 0;
 }
