@@ -129,6 +129,9 @@ function LocationImage ({ location, onClick }) {
         alt='with Grayscale and Overlay'
         className={`my-image ${location.isGrayscale ? 'grayscale-image' : ''}`}
       />
+
+      {location.isGrayscale && <div className='x-overlay'>X</div>}
+
       <div className='overlay'>สถานที่ทดสอบ (test)</div>
     </div>
   )

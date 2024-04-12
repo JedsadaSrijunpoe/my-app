@@ -67,6 +67,15 @@ body {
   text-align: center;
 }
 
+.x-overlay {
+  position: absolute;
+  top: 25%;
+  width: 100%;
+  color: red;
+  font-size: 25px;
+  text-align: center;
+}
+
 /* --------------------Text------------------- */
 
 h1 {
