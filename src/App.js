@@ -123,13 +123,13 @@ function App () {
 
 function LocationImage ({ location, onClick }) {
   return (
-    <div className='image-container'>
+    <div className='image-container' onClick={onClick}>
       <img
         src={location.src}
         alt='with Grayscale and Overlay'
         className={`my-image ${location.isGrayscale ? 'grayscale-image' : ''}`}
-        onClick={onClick}
       />
+      <div className='overlay'>สถานที่ทดสอบ (test)</div>
     </div>
   )
 }
