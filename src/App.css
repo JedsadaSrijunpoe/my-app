@@ -1,19 +1,19 @@
 @font-face {
   font-family: "ChulabhornLikit-Bold";
   src: local("ChulabhornLikit-Bold"),
-  url("./fonts/ChulabhornLikitText-Bold.ttf") format("truetype");
+    url("./fonts/ChulabhornLikitText-Bold.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "ChulabhornLikit";
   src: local("ChulabhornLikit"),
-  url("./fonts/ChulabhornLikitText-Regular.ttf") format("truetype");
+    url("./fonts/ChulabhornLikitText-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "ChulabhornLikit-Medium";
   src: local("ChulabhornLikit-Medium"),
-  url("./fonts/ChulabhornLikitText-Medium.ttf") format("truetype");
+    url("./fonts/ChulabhornLikitText-Medium.ttf") format("truetype");
 }
 
 .App {
@@ -22,21 +22,21 @@
 }
 
 .App-header {
-  background-color: #FD7C9B;
+  background-color: #fd7c9b;
   width: 100%;
   height: 30px;
 }
 
-.player-container{
-  background-color: #F2F2F2;
-  width: 70%;
-  margin: 5px auto;
-  border-radius: 10%;
+/* --------------------Image------------------- */
+
+.image-row {
+  display: flex;
+  margin: 0 15%;
 }
 
-.grayscale-image {
-  filter: grayscale(100%);
-  transition: filter 0.3s ease-in-out; /* Optional for smooth transition */
+.image-container {
+  width: 100%;
+  margin: 0.05% 0.05%;
 }
 
 .my-image {
@@ -46,14 +46,33 @@
   transition: filter 0.3s ease-in-out;
 }
 
-.image-container {
-  width: 100%;
-  margin: 0.05% 0.05%;
+.grayscale-image {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease-in-out; /* Optional for smooth transition */
 }
 
-.image-row {
-  display: flex;
-  margin: 0 15%;
+/* --------------------Text------------------- */
+
+h1 {
+  font-size: 20px;
+  font-family: "ChulabhornLikit-Bold";
+}
+
+.player-container {
+  background-color: #f2f2f2;
+  width: 70%;
+  margin: 15px auto;
+  padding-top: 0.1px;
+  padding-bottom: 15px;
+  border-radius: 10%;
+}
+
+.player {
+  font-size: 15px;
+  font-family: "ChulabhornLikit-Medium";
+  user-select: none;
+  cursor: pointer;
+  color: #fd7c9b;
 }
 
 .cross-out {
@@ -61,26 +80,13 @@
   color: gray;
 }
 
-.player {
-  font-size: 20px;
-  font-family: "ChulabhornLikit-Medium";
-  user-select: none;
-  cursor: pointer;
-  display: inline;
-  color: #FD7C9B;
-}
-
-.topic {
-  font-size: 30px;
-  font-family: "ChulabhornLikit-Bold";
-  display: inline;
-}
+/* --------------------Button------------------- */
 
 .reset-button {
   padding: 15px 25%;
-  font-size: 25px;
+  font-size: 20px;
   font-family: "ChulabhornLikit-Bold";
-  background-color: #73AD8D;
+  background-color: #73ad8d;
   color: white;
   border-radius: 20px;
   border: none;
