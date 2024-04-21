@@ -3,16 +3,16 @@ import { useState } from 'react'
 
 function App () {
   const [locations, setLocations] = useState([
-    { src: '/image/place1.jpg', isGrayscale: false },
-    { src: '/image/place2.jpg', isGrayscale: false },
-    { src: '/image/place3.jpg', isGrayscale: false },
-    { src: '/image/place4.jpg', isGrayscale: false },
-    { src: '/image/place5.jpg', isGrayscale: false },
-    { src: '/image/place6.jpg', isGrayscale: false },
-    { src: '/image/place7.jpg', isGrayscale: false },
-    { src: '/image/place8.jpg', isGrayscale: false },
-    { src: '/image/place9.jpg', isGrayscale: false },
-    { src: '/image/place10.jpg', isGrayscale: false }
+    { src: '/image/locations/place1.JPG', isGrayscale: false },
+    { src: '/image/locations/place2.JPG', isGrayscale: false },
+    { src: '/image/locations/place3.JPG', isGrayscale: false },
+    { src: '/image/locations/place4.JPG', isGrayscale: false },
+    { src: '/image/locations/place5.JPG', isGrayscale: false },
+    { src: '/image/locations/place6.JPG', isGrayscale: false },
+    { src: '/image/locations/place7.JPG', isGrayscale: false },
+    { src: '/image/locations/place8.JPG', isGrayscale: false },
+    { src: '/image/locations/place9.JPG', isGrayscale: false },
+    { src: '/image/locations/place10.JPG', isGrayscale: false }
   ])
 
   const toggleGrayscale = index => {
