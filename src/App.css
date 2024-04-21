@@ -79,18 +79,19 @@
 
 /* --------------------Text------------------- */
 
-h1 {
-  font-size: 20px;
+.header-text {
+  color: #502b23;
+  font-size: 25px;
+  line-height: 10px;
   font-family: "ChulabhornLikit-Bold";
-  -webkit-text-stroke: 1px black;
+  -webkit-text-stroke: 1px #c1846f;
 }
 
 .player-container {
-  background-color: #f2f2f2;
+  background-color: rgba(142, 94, 44, 0.2);
   width: 70%;
   margin: 15px auto;
-  padding-top: 0.1px;
-  padding-bottom: 15px;
+  padding: 15px 0;
   border-radius: 10%;
 }
 
@@ -99,12 +100,11 @@ h1 {
   font-family: "ChulabhornLikit-Medium";
   user-select: none;
   cursor: pointer;
-  color: #fd7c9b;
+  color: #502b23;
 }
 
 .cross-out {
   text-decoration: line-through;
-  color: gray;
 }
 
 /* --------------------Button------------------- */

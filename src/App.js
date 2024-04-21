@@ -3,16 +3,56 @@ import { useState } from 'react'
 
 function App () {
   const [locations, setLocations] = useState([
-    { src: '/image/locations/place1.JPG', isGrayscale: false },
-    { src: '/image/locations/place2.JPG', isGrayscale: false },
-    { src: '/image/locations/place3.JPG', isGrayscale: false },
-    { src: '/image/locations/place4.JPG', isGrayscale: false },
-    { src: '/image/locations/place5.JPG', isGrayscale: false },
-    { src: '/image/locations/place6.JPG', isGrayscale: false },
-    { src: '/image/locations/place7.JPG', isGrayscale: false },
-    { src: '/image/locations/place8.JPG', isGrayscale: false },
-    { src: '/image/locations/place9.JPG', isGrayscale: false },
-    { src: '/image/locations/place10.JPG', isGrayscale: false }
+    {
+      src: '/image/locations/place1.JPG',
+      locationName: 'ปราสาท',
+      isGrayscale: false
+    },
+    {
+      src: '/image/locations/place2.JPG',
+      locationName: 'ลานดอกไม้',
+      isGrayscale: false
+    },
+    {
+      src: '/image/locations/place3.JPG',
+      locationName: 'หนองน้ำ',
+      isGrayscale: false
+    },
+    {
+      src: '/image/locations/place4.JPG',
+      locationName: 'เรือโจรสลัด',
+      isGrayscale: false
+    },
+    {
+      src: '/image/locations/place5.JPG',
+      locationName: 'ร้านสะดวกซื้อ',
+      isGrayscale: false
+    },
+    {
+      src: '/image/locations/place6.JPG',
+      locationName: 'ฝั่งทะเลสาบ',
+      isGrayscale: false
+    },
+    {
+      src: '/image/locations/place7.JPG',
+      locationName: 'โรงเตี๊ยม',
+      isGrayscale: false
+    },
+    {
+      src: '/image/locations/place8.JPG',
+      locationName: 'กระท่อมลึกลับ',
+      isGrayscale: false
+    },
+    {
+      src: '/image/locations/place9.JPG',
+      locationName: 'ถ้ำหัวกะโหลก',
+      isGrayscale: false
+    },
+    {
+      src: '/image/locations/place10.JPG',
+      locationName: 'เหมืองแร่',
+      isGrayscale: false
+    }
   ])
 
   const toggleGrayscale = index => {
@@ -53,7 +93,7 @@ function App () {
   return (
     <div className='App'>
       <Header />
-      <h1>สถานที่ ( 10 )</h1>
+      <p className='header-text'>สถานที่ ( 10 )</p>
       <div className='image-row'>
         <LocationImage
           location={locations[0]}
@@ -105,8 +145,8 @@ function App () {
         />
       </div>
 
+      <p className='header-text'>ผู้เล่น ( 7 )</p>
       <div className='player-container'>
-        <h1>ผู้เล่น ( 7 )</h1>
         <PlayerDiv player={players[0]} onClick={() => toggleCrossOut(0)} />
         <PlayerDiv player={players[1]} onClick={() => toggleCrossOut(1)} />
         <PlayerDiv player={players[2]} onClick={() => toggleCrossOut(2)} />
@@ -133,7 +173,7 @@ function LocationImage ({ location, onClick }) {
 
       {/* {location.isGrayscale && <div className='x-overlay'>X</div>} */}
 
-      <div className='overlay'>สถานที่ทดสอบ (test)</div>
+      <div className='overlay'>{location.locationName}</div>
     </div>
   )
 }
