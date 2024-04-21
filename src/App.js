@@ -3,16 +3,16 @@ import { useState } from 'react'
 
 function App () {
   const [locations, setLocations] = useState([
-    { src: '/place1.jpg', isGrayscale: false },
-    { src: '/place2.jpg', isGrayscale: false },
-    { src: '/place3.jpg', isGrayscale: false },
-    { src: '/place4.jpg', isGrayscale: false },
-    { src: '/place5.jpg', isGrayscale: false },
-    { src: '/place6.jpg', isGrayscale: false },
-    { src: '/place7.jpg', isGrayscale: false },
-    { src: '/place8.jpg', isGrayscale: false },
-    { src: '/place9.jpg', isGrayscale: false },
-    { src: '/place10.jpg', isGrayscale: false }
+    { src: '/image/place1.jpg', isGrayscale: false },
+    { src: '/image/place2.jpg', isGrayscale: false },
+    { src: '/image/place3.jpg', isGrayscale: false },
+    { src: '/image/place4.jpg', isGrayscale: false },
+    { src: '/image/place5.jpg', isGrayscale: false },
+    { src: '/image/place6.jpg', isGrayscale: false },
+    { src: '/image/place7.jpg', isGrayscale: false },
+    { src: '/image/place8.jpg', isGrayscale: false },
+    { src: '/image/place9.jpg', isGrayscale: false },
+    { src: '/image/place10.jpg', isGrayscale: false }
   ])
 
   const toggleGrayscale = index => {
@@ -52,7 +52,7 @@ function App () {
 
   return (
     <div className='App'>
-      <div className='App-header'></div>
+      <Header />
       <h1>สถานที่ ( 10 )</h1>
       <div className='image-row'>
         <LocationImage
@@ -117,6 +117,7 @@ function App () {
       </div>
 
       <ResetButton onClick={resetAllState} />
+      <div className='App-footer'></div>
     </div>
   )
 }
@@ -130,7 +131,7 @@ function LocationImage ({ location, onClick }) {
         className={`my-image ${location.isGrayscale ? 'grayscale-image' : ''}`}
       />
 
-      {location.isGrayscale && <div className='x-overlay'>X</div>}
+      {/* {location.isGrayscale && <div className='x-overlay'>X</div>} */}
 
       <div className='overlay'>สถานที่ทดสอบ (test)</div>
     </div>
@@ -151,9 +152,15 @@ function PlayerDiv ({ player, onClick }) {
 function ResetButton ({ onClick }) {
   return (
     <div>
-      <button className='reset-button' onClick={onClick}>
-        เริ่มใหม่
-      </button>
+      <button className='reset-button' onClick={onClick}></button>
+    </div>
+  )
+}
+
+function Header () {
+  return (
+    <div className='image-container'>
+      <img src='/image/Top.png' alt='header' className='header' />
     </div>
   )
 }

@@ -16,20 +16,21 @@
     url("./fonts/ChulabhornLikitText-Medium.ttf") format("truetype");
 }
 
-body {
-  background-color: #fd7c9b;
-}
-
 .App {
   background-color: white;
   text-align: center;
-  padding: 0 0 20px 0;
 }
 
-.App-header {
-  background-color: #fd7c9b;
+.header {
+  width: 100%;
+}
+
+.App-footer {
+  background-image: url("/public/image/Tab.PNG");
+  background-size: cover;
   width: 100%;
   height: 30px;
+  border-top: 2px solid black;
 }
 
 /* --------------------Image------------------- */
@@ -81,6 +82,7 @@ body {
 h1 {
   font-size: 20px;
   font-family: "ChulabhornLikit-Bold";
+  -webkit-text-stroke: 1px black;
 }
 
 .player-container {
@@ -108,11 +110,11 @@ h1 {
 /* --------------------Button------------------- */
 
 .reset-button {
-  padding: 15px 25%;
-  font-size: 20px;
-  font-family: "ChulabhornLikit-Bold";
-  background-color: #73ad8d;
-  color: white;
-  border-radius: 20px;
+  padding: 25px 50px;
+  margin: 10px;
   border: none;
+  background-color: red;
+  background-image: url("/public/image/Button_Reset.png");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
