@@ -134,3 +134,29 @@
 .information-button-image {
   width: 100%;
 }
+
+.image-popup {
+  width: 100%;
+  padding-top: 50%;
+  padding-bottom: 100%;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.image-manual {
+  width: 90%;
+  box-shadow: 0 0 8px 4px rgba(255, 255, 255, 1);
+}
+
+.text-close-popup {
+  margin-top: 10px;
+  color: white;
+  font-size: 20px;
+  font-family: "ChulabhornLikit-Medium";
+  font-weight: bold;
+  user-select: none;
+  text-shadow: 0 0 3px white;
+  -webkit-text-stroke: 0.5px #502b23;
+}

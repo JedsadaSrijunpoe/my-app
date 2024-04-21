@@ -213,13 +213,34 @@ function Header () {
 }
 
 function InformationButton () {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const openPopup = () => {
+    setIsOpen(true)
+  }
+  const closePopup = () => {
+    setIsOpen(false)
+  }
+
   return (
-    <div className='information-button'>
-      <img
-        className='information-button-image'
-        src='/image/icon_i.png'
-        alt='information-button'
-      />
+    <div>
+      <div className='information-button' onClick={openPopup}>
+        <img
+          className='information-button-image'
+          src='/image/icon_i.png'
+          alt='information-button'
+        />
+      </div>
+      {isOpen && (
+        <div className='image-popup' onClick={closePopup}>
+          <img
+            className='image-manual'
+            src='image/IMG_7526.JPG'
+            alt='Popup manual'
+          />
+          <div className='text-close-popup'>TAB TO CLOSE</div>
+        </div>
+      )}
     </div>
   )
 }
