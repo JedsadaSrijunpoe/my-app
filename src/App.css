@@ -35,6 +35,10 @@
 
 /* --------------------Image------------------- */
 
+.location-container {
+  margin-bottom: 50px;
+}
+
 .image-row {
   display: flex;
   margin: 0 15%;
@@ -63,7 +67,7 @@
   background: rgba(0, 0, 0, 0.2);
   width: 100%;
   color: white;
-  font-size: 10px;
+  font-size: 12px;
   font-family: "ChulabhornLikit";
   text-align: center;
 }
@@ -111,9 +115,22 @@
 
 .reset-button {
   width: 30%;
-  margin: 10px auto;
+  margin: 30px auto;
+  cursor: pointer;
 }
 
 .reset-button-image {
+  width: 100%;
+}
+
+.information-button {
+  position: absolute;
+  width: 6%;
+  top: 8%;
+  left: 4%;
+  cursor: pointer;
+}
+
+.information-button-image {
   width: 100%;
 }

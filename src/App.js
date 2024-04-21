@@ -94,55 +94,57 @@ function App () {
     <div className='App'>
       <Header />
       <p className='header-text'>สถานที่ ( 10 )</p>
-      <div className='image-row'>
-        <LocationImage
-          location={locations[0]}
-          onClick={() => toggleGrayscale(0)}
-        />
-        <LocationImage
-          location={locations[1]}
-          onClick={() => toggleGrayscale(1)}
-        />
-      </div>
-      <div className='image-row'>
-        <LocationImage
-          location={locations[2]}
-          onClick={() => toggleGrayscale(2)}
-        />
-        <LocationImage
-          location={locations[3]}
-          onClick={() => toggleGrayscale(3)}
-        />
-      </div>
-      <div className='image-row'>
-        <LocationImage
-          location={locations[4]}
-          onClick={() => toggleGrayscale(4)}
-        />
-        <LocationImage
-          location={locations[5]}
-          onClick={() => toggleGrayscale(5)}
-        />
-      </div>
-      <div className='image-row'>
-        <LocationImage
-          location={locations[6]}
-          onClick={() => toggleGrayscale(6)}
-        />
-        <LocationImage
-          location={locations[7]}
-          onClick={() => toggleGrayscale(7)}
-        />
-      </div>
-      <div className='image-row'>
-        <LocationImage
-          location={locations[8]}
-          onClick={() => toggleGrayscale(8)}
-        />
-        <LocationImage
-          location={locations[9]}
-          onClick={() => toggleGrayscale(9)}
-        />
+      <div className='location-container'>
+        <div className='image-row'>
+          <LocationImage
+            location={locations[0]}
+            onClick={() => toggleGrayscale(0)}
+          />
+          <LocationImage
+            location={locations[1]}
+            onClick={() => toggleGrayscale(1)}
+          />
+        </div>
+        <div className='image-row'>
+          <LocationImage
+            location={locations[2]}
+            onClick={() => toggleGrayscale(2)}
+          />
+          <LocationImage
+            location={locations[3]}
+            onClick={() => toggleGrayscale(3)}
+          />
+        </div>
+        <div className='image-row'>
+          <LocationImage
+            location={locations[4]}
+            onClick={() => toggleGrayscale(4)}
+          />
+          <LocationImage
+            location={locations[5]}
+            onClick={() => toggleGrayscale(5)}
+          />
+        </div>
+        <div className='image-row'>
+          <LocationImage
+            location={locations[6]}
+            onClick={() => toggleGrayscale(6)}
+          />
+          <LocationImage
+            location={locations[7]}
+            onClick={() => toggleGrayscale(7)}
+          />
+        </div>
+        <div className='image-row'>
+          <LocationImage
+            location={locations[8]}
+            onClick={() => toggleGrayscale(8)}
+          />
+          <LocationImage
+            location={locations[9]}
+            onClick={() => toggleGrayscale(9)}
+          />
+        </div>
       </div>
 
       <p className='header-text'>ผู้เล่น ( 7 )</p>
@@ -205,6 +207,19 @@ function Header () {
   return (
     <div className='image-container'>
       <img src='/image/Top.png' alt='header' className='header-image' />
+      <InformationButton />
+    </div>
+  )
+}
+
+function InformationButton () {
+  return (
+    <div className='information-button'>
+      <img
+        className='information-button-image'
+        src='/image/icon_i.png'
+        alt='information-button'
+      />
     </div>
   )
 }
