@@ -151,8 +151,12 @@ function PlayerDiv ({ player, onClick }) {
 
 function ResetButton ({ onClick }) {
   return (
-    <div>
-      <button className='reset-button' onClick={onClick}></button>
+    <div className='image-container reset-button' onClick={onClick}>
+      <img
+        src='image/Button_Reset.png'
+        alt='reset button'
+        className='reset-button-image'
+      />
     </div>
   )
 }
@@ -160,7 +164,7 @@ function ResetButton ({ onClick }) {
 function Header () {
   return (
     <div className='image-container'>
-      <img src='/image/Top.png' alt='header' className='header' />
+      <img src='/image/Top.png' alt='header' className='header-image' />
     </div>
   )
 }

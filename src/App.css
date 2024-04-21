@@ -21,7 +21,7 @@
   text-align: center;
 }
 
-.header {
+.header-image {
   width: 100%;
 }
 
@@ -110,11 +110,10 @@ h1 {
 /* --------------------Button------------------- */
 
 .reset-button {
-  padding: 25px 50px;
-  margin: 10px;
-  border: none;
-  background-color: red;
-  background-image: url("/public/image/Button_Reset.png");
-  background-size: contain;
-  background-repeat: no-repeat;
+  width: 30%;
+  margin: 10px auto;
+}
+
+.reset-button-image {
+  width: 100%;
 }
