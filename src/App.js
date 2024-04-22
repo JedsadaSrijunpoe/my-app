@@ -249,7 +249,7 @@ function InformationButton () {
 }
 
 function Timer () {
-  const DEFAULT_COUNTDOWN = 65
+  const DEFAULT_COUNTDOWN = 600
   const DEFAULT_COUNTDOWN_ALMOST_UP = 60
   const [countDown, setCountdown] = useState(DEFAULT_COUNTDOWN)
   const [isTimerRunning, setIsTimerRunning] = useState(false)
