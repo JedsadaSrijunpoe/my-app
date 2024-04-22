@@ -149,7 +149,7 @@
 
 .image-popup {
   width: 100%;
-  padding-top: 50%;
+  padding-top: 25%;
   padding-bottom: 100%;
   z-index: 2;
   position: fixed;

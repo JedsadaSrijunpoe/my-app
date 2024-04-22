@@ -238,7 +238,7 @@ function InformationButton () {
         <div className='image-popup' onClick={closePopup}>
           <img
             className='image-manual'
-            src='image/IMG_7526.JPG'
+            src='image/popup.jpg'
             alt='Popup manual'
           />
           <div className='text-close-popup'>TAB TO CLOSE</div>
