@@ -249,27 +249,29 @@ function InformationButton () {
 }
 
 function Timer () {
-  const [CountDown, setCountdown] = useState(5)
+  const DEFAULT_COUNTDOWN = 600
+  const [countDown, setCountdown] = useState(DEFAULT_COUNTDOWN)
   const [isTimerRunning, setIsTimerRunning] = useState(false)
+
   useEffect(() => {
     if (isTimerRunning) {
       const interval = setInterval(() => {
-        if (CountDown > 0) {
-          setCountdown(CountDown - 1)
+        if (countDown > 0) {
+          setCountdown(countDown - 1)
         } else {
           clearInterval(interval)
         }
       }, 1000)
       return () => clearInterval(interval)
     }
-  }, [isTimerRunning, CountDown])
+  }, [isTimerRunning, countDown])
 
   const formatTimer = () => {
-    if (CountDown == 0) {
+    if (countDown === 0) {
       return 'Time out!'
     }
-    const min = Math.floor(CountDown / 60)
-    const second = CountDown % 60
+    const min = Math.floor(countDown / 60)
+    const second = countDown % 60
     return `${min > 9 ? min : `0${min}`}:${second > 9 ? second : `0${second}`}`
   }
 
@@ -282,7 +284,7 @@ function Timer () {
   }
 
   const resetTimer = () => {
-    setCountdown(600)
+    setCountdown(DEFAULT_COUNTDOWN)
     setIsTimerRunning(false)
   }
 
