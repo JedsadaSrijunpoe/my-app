@@ -1,5 +1,5 @@
 import './App.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function App () {
   const [locations, setLocations] = useState([
@@ -93,6 +93,9 @@ function App () {
   return (
     <div className='App'>
       <Header />
+
+      <Timer />
+
       <p className='header-text'>สถานที่ ( 10 )</p>
       <div className='location-container'>
         <div className='image-row'>
@@ -240,6 +243,59 @@ function InformationButton () {
           />
           <div className='text-close-popup'>TAB TO CLOSE</div>
         </div>
+      )}
+    </div>
+  )
+}
+
+function Timer () {
+  const [CountDown, setCountdown] = useState(5)
+  const [isTimerRunning, setIsTimerRunning] = useState(false)
+  useEffect(() => {
+    if (isTimerRunning) {
+      const interval = setInterval(() => {
+        if (CountDown > 0) {
+          setCountdown(CountDown - 1)
+        } else {
+          clearInterval(interval)
+        }
+      }, 1000)
+      return () => clearInterval(interval)
+    }
+  }, [isTimerRunning, CountDown])
+
+  const formatTimer = () => {
+    if (CountDown == 0) {
+      return 'Time out!'
+    }
+    const min = Math.floor(CountDown / 60)
+    const second = CountDown % 60
+    return `${min > 9 ? min : `0${min}`}:${second > 9 ? second : `0${second}`}`
+  }
+
+  const startTimer = () => {
+    setIsTimerRunning(true)
+  }
+
+  const stopTimer = () => {
+    setIsTimerRunning(false)
+  }
+
+  const resetTimer = () => {
+    setCountdown(600)
+    setIsTimerRunning(false)
+  }
+
+  return (
+    <div>
+      <p>{formatTimer()}</p>
+      {isTimerRunning ? (
+        <div>
+          <button onClick={stopTimer}>stop</button>
+          <button onClick={resetTimer}>reset</button>
+        </div>
+      ) : (
+        <button onClick={startTimer}>start</button>
       )}
     </div>
   )
