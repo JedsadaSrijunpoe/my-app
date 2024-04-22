@@ -119,7 +119,19 @@
   cursor: pointer;
 }
 
-.reset-button-image {
+.start-button {
+  margin: auto 0;
+  width: 90px;
+  cursor: pointer;
+}
+
+.reset-timer-button {
+  margin-top: auto;
+  width: 30px;
+  cursor: pointer;
+}
+
+.button-image {
   width: 100%;
 }
 
@@ -159,4 +171,30 @@
   user-select: none;
   text-shadow: 0 0 3px white;
   -webkit-text-stroke: 0.5px #502b23;
+}
+
+.timer-container {
+  display: flex;
+  justify-content: center;
+  height: 40px;
+}
+
+.timer-text-container {
+  background-color: rgba(142, 94, 44, 0.2);
+  padding: 5px 15px;
+  margin: 0 10px;
+  width: 80px;
+  border-radius: 50px;
+  font-family: "ChulabhornLikit-Medium";
+  font-weight: bold;
+  font-size: 20px;
+  color: #502b23;
+}
+
+.timer-text-almost-up {
+  color: #b53d28;
+}
+
+.timer-text-hidden {
+  color: rgba(142, 94, 44, 0.2);
 }

@@ -161,7 +161,11 @@ function App () {
         <PlayerDiv player={players[6]} onClick={() => toggleCrossOut(6)} />
       </div>
 
-      <ResetButton onClick={resetAllState} />
+      <MyButton
+        onClick={resetAllState}
+        src='image/Button_Reset.png'
+        className='reset-button'
+      />
       <div className='App-footer'></div>
     </div>
   )
@@ -194,14 +198,10 @@ function PlayerDiv ({ player, onClick }) {
   )
 }
 
-function ResetButton ({ onClick }) {
+function MyButton ({ onClick, src, className }) {
   return (
-    <div className='image-container reset-button' onClick={onClick}>
-      <img
-        src='image/Button_Reset.png'
-        alt='reset button'
-        className='reset-button-image'
-      />
+    <div className={className} onClick={onClick}>
+      <img src={src} alt='reset button' className='button-image' />
     </div>
   )
 }
@@ -249,30 +249,46 @@ function InformationButton () {
 }
 
 function Timer () {
-  const DEFAULT_COUNTDOWN = 600
+  const DEFAULT_COUNTDOWN = 65
+  const DEFAULT_COUNTDOWN_ALMOST_UP = 60
   const [countDown, setCountdown] = useState(DEFAULT_COUNTDOWN)
   const [isTimerRunning, setIsTimerRunning] = useState(false)
+  const [isBlink, setIsBlink] = useState(false)
+  const [isHidden, setIsHidden] = useState(false)
 
   useEffect(() => {
     if (isTimerRunning) {
+      setIsBlink(false)
       const interval = setInterval(() => {
         if (countDown > 0) {
           setCountdown(countDown - 1)
+          setIsBlink(false)
         } else {
           clearInterval(interval)
+          setIsBlink(true)
         }
       }, 1000)
       return () => clearInterval(interval)
     }
   }, [isTimerRunning, countDown])
 
-  const formatTimer = () => {
-    if (countDown === 0) {
-      return 'Time out!'
+  useEffect(() => {
+    if (isBlink) {
+      const interval_blink = setInterval(() => {
+        setIsHidden(!isHidden)
+      }, 800)
+      return () => clearInterval(interval_blink)
+    } else {
+      setIsHidden(false)
     }
+  }, [isBlink, isHidden])
+
+  const formatTimer = () => {
     const min = Math.floor(countDown / 60)
     const second = countDown % 60
-    return `${min > 9 ? min : `0${min}`}:${second > 9 ? second : `0${second}`}`
+    return `${min > 9 ? min : `0${min}`} : ${
+      second > 9 ? second : `0${second}`
+    }`
   }
 
   const startTimer = () => {
@@ -286,19 +302,36 @@ function Timer () {
   const resetTimer = () => {
     setCountdown(DEFAULT_COUNTDOWN)
     setIsTimerRunning(false)
+    setIsBlink(false)
   }
 
   return (
-    <div>
-      <p>{formatTimer()}</p>
+    <div className='timer-container'>
       {isTimerRunning ? (
-        <div>
-          <button onClick={stopTimer}>stop</button>
-          <button onClick={resetTimer}>reset</button>
-        </div>
+        <MyButton
+          onClick={stopTimer}
+          src='image/Button_stop.png'
+          className='start-button'
+        />
       ) : (
-        <button onClick={startTimer}>start</button>
+        <MyButton
+          onClick={startTimer}
+          src='image/Button_start.png'
+          className='start-button'
+        />
       )}
+      <div
+        className={`timer-text-container ${
+          countDown < DEFAULT_COUNTDOWN_ALMOST_UP && 'timer-text-almost-up'
+        } ${isHidden && 'timer-text-hidden'}`}
+      >
+        {formatTimer()}
+      </div>
+      <MyButton
+        onClick={resetTimer}
+        src='image/Reset.png'
+        className='reset-timer-button'
+      />
     </div>
   )
 }
