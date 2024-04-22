@@ -29,8 +29,11 @@
   background-image: url("/public/image/Tab.PNG");
   background-size: cover;
   width: 100%;
-  height: 30px;
   border-top: 2px solid black;
+  color: white;
+  font-size: 8px;
+  padding: 5px 0;
+  -webkit-text-stroke: 0.1px #502b23;
 }
 
 /* --------------------Image------------------- */
@@ -70,6 +73,7 @@
   font-size: 12px;
   font-family: "ChulabhornLikit";
   text-align: center;
+  -webkit-text-stroke: 0.05px black;
 }
 
 .x-overlay {

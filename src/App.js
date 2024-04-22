@@ -166,7 +166,12 @@ function App () {
         src='image/Button_Reset.png'
         className='reset-button'
       />
-      <div className='App-footer'></div>
+      <div className='App-footer'>
+        @Credit: Srinakharinwirot University , COSCI Interactive and Multimedia
+        Design. <br />
+        UX/UI design by Jedsadaporn Intawong , Web developed by Jedsada
+        Srijunpoe (student from KMUTNB)
+      </div>
     </div>
   )
 }
